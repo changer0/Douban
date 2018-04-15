@@ -7,7 +7,30 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    hotList: [
+      {
+        pic: '/images/example2.png',
+        title: '玻璃棧道',
+        desc: '22W人去過'
+      }, {
+        pic: '/images/example2.png',
+        title: '玻璃棧道2',
+        desc: '22W人去過'
+      }, {
+        pic: '/images/example2.png',
+        title: '玻璃棧道',
+        desc: '22W人去過'
+      }, {
+        pic: '/images/example2.png',
+        title: '玻璃棧道3',
+        desc: '22W人去過'
+      }, {
+        pic: '/images/example2.png',
+        title: '玻璃棧道4',
+        desc: '22W人去過'
+      }
+    ]
   },
   //事件处理函数
   bindViewTap: function() {

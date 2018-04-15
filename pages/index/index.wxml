@@ -1,2 +1,95 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<scroll-view scroll-y="true">
+  <!--搜索框  -->
+  <view class='search_tab'>
+    <view class="search_tab_text">搜索</view>
+  </view>
+  <!--近期上映  -->
+  <view class="list_top">
+    <view class='list_top_left_mark' />
+    <view class='list_top_text'>近期上映</view>
+    <view class='list_top_more'>更多 ></view>
+  </view>
+
+  <scroll-view scroll-x="true" class='list_scroll'>
+    <view wx:for-items="{{recentMovie}}" wx:key="unique" class="list_for">
+
+      <block wx:if="{{index < 7}}">
+        <view class='list_item'>
+          <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
+          <view class='list_item_title'>{{item.title}}</view>
+          <view class='list_item_rating'>
+
+            <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
+            <view class='list_item_rating_text'>{{item.rating.average}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class='list_divide' />
+
+  <!--热门电影  -->
+  <view class="list_top">
+    <view class='list_top_left_mark' />
+    <view class='list_top_text'>热门电影</view>
+    <view class='list_top_more'>更多 ></view>
+  </view>
+  <scroll-view scroll-x="true" class='list_scroll'>
+    <view wx:for-items="{{newMovie}}" wx:key="unique" class="list_for">
+
+      <block wx:if="{{index < 7}}">
+        <view class='list_item'>
+          <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
+          <view class='list_item_title'>{{item.title}}</view>
+          <view class='list_item_rating'>
+
+            <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
+            <view class='list_item_rating_text'>{{item.rating.average}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+
+  <view class='list_divide' />
+
+  <!--TOP250  -->
+  <view class="list_top">
+    <view class='list_top_left_mark' />
+    <view class='list_top_text'>TOP250 </view>
+    <view class='list_top_more'>更多 ></view>
+  </view>
+  <scroll-view scroll-x="true" class='list_scroll'>
+    <view wx:for-items="{{topMovie}}" wx:key="unique" class="list_for">
+
+      <block wx:if="{{index < 7}}">
+        <view class='list_item'>
+          <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
+          <view class='list_item_title'>{{item.title}}</view>
+          <view class='list_item_rating'>
+
+            <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
+            <view class='list_item_rating_text'>{{item.rating.average}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+
+  <!-- <view class='list_scroll'>
+    <view class='list_item'>
+      <image src='http://pic.58pic.com/58pic/15/36/00/73b58PICgvY_1024.jpg' class='list_item_img'></image>
+      <view class='list_item_title' bindtap='clickTest'>狂暴巨兽</view>
+      <view class='list_item_rating'>
+
+        <view class='list_item_rating_star' style='background-position: 0 {{starPositionY[index]}}'/>
+        <view class='list_item_rating_text'>{{starPositionY[1]}}</view>
+      </view>
+    </view> 
+  </view>  -->
+
+</scroll-view>
