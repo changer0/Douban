@@ -3,7 +3,7 @@
 
 <scroll-view scroll-y="true">
   <!--搜索框  -->
-  <view class='search_tab'>
+  <view class='search_tab' bindtap='goSearch'>
     <view class="search_tab_text">搜索</view>
   </view>
   <!--近期上映  -->

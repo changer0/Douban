@@ -4,6 +4,7 @@ module.exports = {
   MOVIE_RECENT_URL: ROOT_URL + 'movie/in_theaters',
   MOVIE_NEW_URL: ROOT_URL + 'movie/new_movies',
   MOVIE_TOP250_URL: ROOT_URL + 'movie/top250',
+  MOVIE_SEARCH_RESULT: ROOT_URL + 'movie/search?q='
 }
 // https://api.douban.com/v2/movie/in_theaters  豆瓣地址
 

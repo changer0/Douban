@@ -77,6 +77,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  goSearch: function () {
+    wx.navigateTo({
+      url: '../search/search'
+    })
   }
 })
 

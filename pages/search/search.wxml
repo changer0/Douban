@@ -1,0 +1,31 @@
+<!--pages/search/search.wxml-->
+
+<import src="../../widget/loading.wxml" />
+<scroll-view>
+  <!--搜索框  -->
+  <view class='search_tab'>
+
+    <view class='search_tab_border'>
+      <image src='../../imgs/search_bar_icon.png' class='search_tab_border_img' />
+      <input bindinput='searchInput' placeholder='搜索' />
+    </view>
+
+    <view class='search_tab_cancel' bindtap='goBack'>取消</view>
+  </view>
+
+  <view class='search_result'>
+    <view wx:for-items="{{result}}" wx:key="unique">
+      <view class='list_divide' />
+      <view class='search_result_item' wx:if="{{index < result.length-1}}">
+        <image src='{{item.images.small}}' class='search_result_item_img' />
+        <view class='search_result_item_right'>
+          <view class='search_result_item_right_title'>{{item.title}}</view>
+          <view class='search_result_item_right_average'>{{item.rating.average}}分/{{item.year}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="loading" hidden="{{!isLoadMore}}">正在载入更多...</view>  -->
+
+
+</scroll-view>

@@ -28,6 +28,24 @@
   height: 26px;
   text-align: center;
 }
+/*点击效果  */
+.search_tab_text:active {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #c6ebcc;
+  color: #bbb;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-top: 7px;
+  height: 26px;
+  text-align: center;
+}
+
 
 /*列表顶部  */
 

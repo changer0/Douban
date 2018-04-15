@@ -1,9 +1,10 @@
 {
   "pages": [
-   
     "pages/index/index",
+    "pages/search/search",
     "pages/wx_test/index",
     "pages/logs/logs"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
