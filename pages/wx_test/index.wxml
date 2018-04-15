@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<!-- <view class="container">
+ <!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -12,10 +12,17 @@
   </view>
 
 
-</view> -->
-   <scroll-view class="recommend_scroll_x_box" scroll-x="true">
+</view> 
+    <scroll-view class="recommend_scroll_x_box" scroll-x="true">
       <view class="recommend_hot_box" wx:for="{{hotList}}">
-        <!-- <image src="{{item.pic}}" class="recommend_hot_image"></image> -->
+         <image src="{{item.pic}}" class="recommend_hot_image"></image> 
         <view>{{item.title}}</view>
       </view>
-    </scroll-view>
+    </scroll-view>  -->
+
+    
+ <import src="../../widget/loading.wxml" />
+
+ <template is="loading"/>  
+
+ <!-- <include src="../../widget/loading.wxml"/>  -->

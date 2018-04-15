@@ -1,5 +1,8 @@
 /* pages/index/index.wxss */
 
+/*loading样式  */
+@import "../../widget/loading.wxss";
+
 /*搜索框  */
 
 .search_tab {
@@ -120,7 +123,7 @@
 .list_item_rating_text {
   font-size: 14px;
   margin-left: 4px;
-  color: #aaaaaa;
+  color: #aaa;
 }
 
 ::-webkit-scrollbar {

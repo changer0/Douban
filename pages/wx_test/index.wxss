@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../widget/loading.wxss";
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -44,3 +45,4 @@
   width: 230rpx;
   height: 143rpx;
 }
+

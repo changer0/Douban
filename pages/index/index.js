@@ -24,8 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var that = this;
-    requestAllDataFromLocal(this);
+
   },
 
   /**
@@ -39,7 +38,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // var that = this;
+    requestAllDataFromLocal(this);
   },
 
   /**
@@ -96,7 +96,7 @@ function requestAllDataFromLocal(page) {
       newMovie: data
     });
   });
-  
+
   requestDataFromLocal(this, constant.MOVIE_TOP250, serverUrl.MOVIE_TOP250_URL, function (data) {
     page.setData({
       topMovie: data
@@ -145,7 +145,8 @@ function requestDataFromNet(page, localKey, serverUrl, dataCallback) {
       requestDataFromLocal(page, localKey, serverUrl, dataCallback);
     },
     complete: function (res) {
-      wx.stopPullDownRefresh;
+      console.log("刷新完成");
+      wx.stopPullDownRefresh();
     }
   })
 }

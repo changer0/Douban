@@ -9,3 +9,4 @@ module.exports = {
 
 //github地址:
 // https://douban.uieee.com/v2/movie/new_movies
+// https://douban.uieee.com/v2/movie/search?tag=喜剧

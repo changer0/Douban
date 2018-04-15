@@ -1,0 +1,13 @@
+<!--widget/loading.wxml-->
+ <template name="loading"> 
+  <view class="loader">
+    <view class="side"></view>
+    <view class="side"></view>
+    <view class="side"></view>
+    <view class="side"></view>
+    <view class="side"></view>
+    <view class="side"></view>
+    <view class="side"></view>
+    <view class="side"></view>
+  </view>
+ </template> 
