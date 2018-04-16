@@ -1,6 +1,7 @@
 //协议地址
 var ROOT_URL = 'https://douban.uieee.com/v2/';
 module.exports = {
+  ROOT_URL: ROOT_URL,
   MOVIE_RECENT_URL: ROOT_URL + 'movie/in_theaters',
   MOVIE_NEW_URL: ROOT_URL + 'movie/new_movies',
   MOVIE_TOP250_URL: ROOT_URL + 'movie/top250',

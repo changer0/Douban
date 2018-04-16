@@ -91,19 +91,22 @@ Page({
  * 请求首页所有数据 从本地
  */
 function requestAllDataFromLocal(page) {
-  requestDataFromLocal(this, constant.MOVIE_RECENT, serverUrl.MOVIE_RECENT_URL, function (data) {
+  requestDataFromLocal(this, constant.MOVIE_RECENT, serverUrl.MOVIE_RECENT_URL + "?count=10", function (data) {
+    //console.log("近期上映: " + data.title);
     page.setData({
       recentMovie: data
     });
   });
 
-  requestDataFromLocal(this, constant.MOVIE_NEW, serverUrl.MOVIE_NEW_URL, function (data) {
+  requestDataFromLocal(this, constant.MOVIE_NEW, serverUrl.MOVIE_NEW_URL + "?count=10", function (data) {
+    //console.log("热门电影: " + data.title);
     page.setData({
       newMovie: data
     });
   });
 
-  requestDataFromLocal(this, constant.MOVIE_TOP250, serverUrl.MOVIE_TOP250_URL, function (data) {
+  requestDataFromLocal(this, constant.MOVIE_TOP250, serverUrl.MOVIE_TOP250_URL + "?count=10", function (data) {
+    //console.log("TOP250: " + data.title);
     page.setData({
       topMovie: data
     });
@@ -114,15 +117,24 @@ function requestAllDataFromLocal(page) {
  * 请求首页所有数据 从网络 下拉刷新时用
  */
 function requestAllDataFromNet(page) {
-  requestDataFromNet(this, constant.MOVIE_RECENT, serverUrl.MOVIE_RECENT_URL, function (data) {
+  requestDataFromNet(this, constant.MOVIE_RECENT, serverUrl.MOVIE_RECENT_URL + "?count=10", function (data) {
+    //console.log("近期上映: " + data[0].title);
     page.setData({
       recentMovie: data
     });
   });
 
-  requestDataFromNet(this, constant.MOVIE_NEW, serverUrl.MOVIE_NEW_URL, function (data) {
+  requestDataFromNet(this, constant.MOVIE_NEW, serverUrl.MOVIE_NEW_URL + "?count=10", function (data) {
+    //console.log("热门电影: " + data[0].title);
     page.setData({
       newMovie: data
+    });
+  });
+
+  requestDataFromNet(this, constant.MOVIE_NEW, serverUrl.MOVIE_TOP250_URL + "?count=10", function (data) {
+    //console.log("TOP250: " + data[0].title);
+    page.setData({
+      topMovie: data
     });
   });
 }

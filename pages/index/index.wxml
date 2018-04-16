@@ -10,7 +10,7 @@
   <view class="list_top">
     <view class='list_top_left_mark' />
     <view class='list_top_text'>近期上映</view>
-    <view class='list_top_more'>更多 ></view>
+    <navigator class='list_top_more' url='../moreList/moreList?url=movie/in_theaters'>更多 ></navigator>
   </view>
 
   <scroll-view scroll-x="true" class='list_scroll'>
@@ -19,7 +19,7 @@
 
       <view wx:for-items="{{recentMovie}}" wx:key="unique" class="list_for">
 
-        <block wx:if="{{index < 7}}">
+        <!-- <block wx:if="{{index < 7}}"> -->
           <view class='list_item'>
             <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
             <view class='list_item_title'>{{item.title}}</view>
@@ -29,7 +29,7 @@
               <view class='list_item_rating_text'>{{item.rating.average}}</view>
             </view>
           </view>
-        </block>
+        <!-- </block> -->
       </view>
     </block>
 
@@ -46,14 +46,14 @@
   <view class="list_top">
     <view class='list_top_left_mark' />
     <view class='list_top_text'>热门电影</view>
-    <view class='list_top_more'>更多 ></view>
+    <navigator class='list_top_more' url='../moreList/moreList?url=movie/new_movies'>更多 ></navigator>
   </view>
   <scroll-view scroll-x="true" class='list_scroll'>
 
     <block wx:if="{{newMovie.length > 0}}">
       <view wx:for-items="{{newMovie}}" wx:key="unique" class="list_for">
 
-        <block wx:if="{{index < 7}}">
+        <!-- <block wx:if="{{index < 7}}"> -->
           <view class='list_item'>
             <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
             <view class='list_item_title'>{{item.title}}</view>
@@ -63,7 +63,7 @@
               <view class='list_item_rating_text'>{{item.rating.average}}</view>
             </view>
           </view>
-        </block>
+        <!-- </block> -->
       </view>
 
     </block>
@@ -78,13 +78,13 @@
   <view class="list_top">
     <view class='list_top_left_mark' />
     <view class='list_top_text'>TOP250 </view>
-    <view class='list_top_more'>更多 ></view>
+    <navigator class='list_top_more' url='../moreList/moreList?url=movie/top250'>更多 ></navigator>
   </view>
   <scroll-view scroll-x="true" class='list_scroll'>
     <block wx:if="{{topMovie.length > 0}}">
       <view wx:for-items="{{topMovie}}" wx:key="unique" class="list_for">
 
-        <block wx:if="{{index < 7}}">
+        <!-- <block wx:if="{{index < 7}}"> -->
           <view class='list_item'>
             <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
             <view class='list_item_title'>{{item.title}}</view>
@@ -94,7 +94,7 @@
               <view class='list_item_rating_text'>{{item.rating.average}}</view>
             </view>
           </view>
-        </block>
+        <!-- </block> -->
       </view>
     </block>
     <template wx:else is="loading" />
