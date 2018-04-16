@@ -36,6 +36,10 @@
   margin: 7px;
 }
 
+.search_tab_border_input {
+  width: 100%;
+}
+
 .search_tab_cancel {
   display: flex;
   flex-direction: row;

@@ -7,7 +7,7 @@
 
     <view class='search_tab_border'>
       <image src='../../imgs/search_bar_icon.png' class='search_tab_border_img' />
-      <input bindinput='searchInput' placeholder='搜索' />
+      <input bindinput='searchInput' class='search_tab_border_input' focus='true' placeholder='搜索' />
     </view>
 
     <view class='search_tab_cancel' bindtap='goBack'>取消</view>
