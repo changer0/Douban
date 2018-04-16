@@ -14,9 +14,9 @@
   </view>
 
   <view class='search_result'>
-    <view wx:for-items="{{result}}" wx:key="unique">
+    <view wx:for-items="{{resultSubjects}}" wx:key="unique">
       <view class='list_divide' />
-      <view class='search_result_item' wx:if="{{index < result.length-1}}">
+      <view class='search_result_item' wx:if="{{index < resultSubjects.length-1}}">
         <image src='{{item.images.small}}' class='search_result_item_img' />
         <view class='search_result_item_right'>
           <view class='search_result_item_right_title'>{{item.title}}</view>
@@ -25,7 +25,9 @@
       </view>
     </view>
   </view>
-  <!-- <view class="loading" hidden="{{!isLoadMore}}">正在载入更多...</view>  -->
+   <!-- <view class="loading" hidden="{{isHideLoadMore}}">正在载入更多...</view>   -->
 
-
+    <!-- <template is="loading" /> -->
+    
 </scroll-view>
+<button loading='{{isNeedLoading}}' class='load_more_loading' hidden='{{isHideLoadMore}}'>{{loadingText}}</button>

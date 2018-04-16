@@ -10,4 +10,5 @@ module.exports = {
 
 //github地址:
 // https://douban.uieee.com/v2/movie/new_movies
-// https://douban.uieee.com/v2/movie/search?tag=喜剧
+//https://api.douban.com/v2/movie/search?tag=喜剧
+//https://api.douban.com/v2/movie/search?tag=哈哈&start=10&count=10

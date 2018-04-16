@@ -3,14 +3,17 @@ var serverUrl = require('../../utils/server.js');
 
 var curSearchKey = '';
 var lastStart = 0;
+var total = -1;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    result: [],
-    isLoadMore: false
+    resultSubjects: [],
+    isHideLoadMore: true,
+    isNeedLoading: true,
+    loadingText: "正在加载"
   },
 
   /**
@@ -38,39 +41,75 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    var that = this;
     lastStart += 10;
-    // requestSearchResuleFromNet(curSearchKey, 0, 10, function (result) {      
-
-    //     that.setData({
-    //       result: result
-    //     });
-      
-
-    // });
+    if (total == -1) {
+      return;
+    }
+    console.log("total: " + total);
+    console.log("lastStart: " + lastStart);
+    if (total < lastStart) {//加载完成搜索数据
+      this.setData({
+        isHideLoadMore: false,
+        isNeedLoading: false,
+        loadingText: "已显示全部"
+      });
+    } else {//加载下一页
+      this.setData({
+        isHideLoadMore: false,
+        isNeedLoading: true,
+        loadingText: "正在加载"
+      });
+      requestSearchResuleFromNet(curSearchKey, lastStart, 10, function (result) {
+        
+        var oldResultSubjects = that.data.resultSubjects;
+        console.log("oldResultSubjects.length: " + oldResultSubjects.length);
+        var oldSize = oldResultSubjects.length;
+        for (var i = 0; i < result.subjects.length; i++ ) {
+          oldResultSubjects[i + oldSize] = result.subjects[i];
+        }
+        var newResultSubjects = oldResultSubjects;
+        that.setData({
+          isHideLoadMore: true,
+          resultSubjects: newResultSubjects
+        });
+        
+        console.log("newResult.length: " + newResultSubjects.length);
+      });
+    }
+    console.log("加载更多....");
   },
 
   searchInput: function (e) {
     var that = this;
+    lastStart = 0;
+    total = -1;
     //console.log(e.detail.value);
     curSearchKey = e.detail.value;
     if (curSearchKey !== '') {
-      requestSearchResuleFromNet(curSearchKey, 0, 10, function (result) {
+      requestSearchResuleFromNet( curSearchKey, 0, 10, function (result) {
         //console.log(result.subjects[0].title);
         console.log(e.detail.value);
         if (curSearchKey === '') {
           that.setData({
-            result: []
+            resultSubjects: [],
+            isHideLoadMore: true
           });
         } else {
+          total = result.total;
           that.setData({
-            result: result
+            resultSubjects: result.subjects,
+            isHideLoadMore: true,
+            isNeedLoading: true,
+            loadingText: "正在加载"
           });
         }
 
       });
     } else {
       that.setData({
-        result: []
+        resultSubjects: [],
+        isHideLoadMore: true
       });
     }
 
@@ -101,7 +140,7 @@ function requestSearchResuleFromNet(searchKey, start, count, resultCallback) {
     },
     method: 'GET',
     success: function (res) {
-      resultCallback(res.data.subjects);
+      resultCallback(res.data);
     },
     complete: function (res) {
       wx.hideNavigationBarLoading();
