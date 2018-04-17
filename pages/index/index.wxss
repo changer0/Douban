@@ -76,12 +76,14 @@
 }
 
 .list_top_more {
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   flex-direction: row;
   color: #42bd55;
   align-items: center;
-  width: 100%; /*必须得设置宽度*/
+  white-space: nowrap; /*文本不换行*/
+  font-weight: bold;
+  /*width: 45px; */
   justify-content: flex-end;
   margin-right: 15px;
 }

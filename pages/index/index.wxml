@@ -10,7 +10,7 @@
   <view class="list_top">
     <view class='list_top_left_mark' />
     <view class='list_top_text'>近期上映</view>
-    <navigator class='list_top_more' url='../moreList/moreList?url=movie/in_theaters'>更多 ></navigator>
+    <navigator class='list_top_more' url='../moreList/moreList?url=movie/in_theaters&title=近期上映'>更多 ></navigator>
   </view>
 
   <scroll-view scroll-x="true" class='list_scroll'>
@@ -46,7 +46,7 @@
   <view class="list_top">
     <view class='list_top_left_mark' />
     <view class='list_top_text'>热门电影</view>
-    <navigator class='list_top_more' url='../moreList/moreList?url=movie/new_movies'>更多 ></navigator>
+    <navigator class='list_top_more' url='../moreList/moreList?url=movie/new_movies&title=热门电影'>更多 ></navigator>
   </view>
   <scroll-view scroll-x="true" class='list_scroll'>
 
@@ -78,7 +78,7 @@
   <view class="list_top">
     <view class='list_top_left_mark' />
     <view class='list_top_text'>TOP250 </view>
-    <navigator class='list_top_more' url='../moreList/moreList?url=movie/top250'>更多 ></navigator>
+    <navigator class='list_top_more' url='../moreList/moreList?url=movie/top250&title=TOP250'>更多 ></navigator>
   </view>
   <scroll-view scroll-x="true" class='list_scroll'>
     <block wx:if="{{topMovie.length > 0}}">

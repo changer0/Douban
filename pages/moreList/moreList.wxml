@@ -1,2 +1,40 @@
 <!--pages/moreList/moreList.wxml-->
-<text>pages/moreList/moreList.wxml</text>
+
+<scroll-view>
+
+  <!--搜索框  -->
+  <view class='search_tab' bindtap='goSearch'>
+    <view class="search_tab_text">搜索</view>
+  </view>
+
+  <view class='list_item'>
+    <view class='list_item_left'>
+      <image class='list_item_img' src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862591842,2864954084&fm=27&gp=0.jpg' />
+      <view class='list_item_text'>狂暴巨兽</view>
+      <view class='list_item_rating'>
+
+        <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
+        <view class='list_item_rating_text'>9.6</view>
+      </view>
+    </view>
+    <view class='list_item_middle'>
+      <image class='list_item_img' src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862591842,2864954084&fm=27&gp=0.jpg' />
+      <view class='list_item_text'>狂暴巨兽</view>
+      <view class='list_item_rating'>
+
+        <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
+        <view class='list_item_rating_text'>9.6</view>
+      </view>
+    </view>
+    <view class='list_item_right'>
+      <image class='list_item_img' src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862591842,2864954084&fm=27&gp=0.jpg' />
+      <view class='list_item_text'>狂暴巨兽</view>
+      <view class='list_item_rating'>
+
+        <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
+        <view class='list_item_rating_text'>9.6</view>
+      </view>
+    </view>
+  </view>
+
+</scroll-view>

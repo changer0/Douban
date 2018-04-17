@@ -14,8 +14,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    curUrl = serverUrl.ROOT_URL + options.url;
+    //curUrl = serverUrl.ROOT_URL + options.url;
+    curUrl = serverUrl.MOVIE_NEW_URL;//先用这个代替, 回头改回来.
     console.log(curUrl);
+    // wx.setNavigationBarTitle({
+    //   title: options.title,
+    // })
   },
 
   /**
@@ -52,5 +56,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  goSearch: function () {
+    wx.navigateTo({
+      url: '../search/search'
+    })
   }
 })

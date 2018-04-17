@@ -4,6 +4,7 @@ var serverUrl = require('../../utils/server.js');
 var curSearchKey = '';
 var lastStart = 0;
 var total = -1;
+const SEARCH_COUNT = 15;
 Page({
 
   /**
@@ -42,7 +43,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    lastStart += 10;
+    lastStart += SEARCH_COUNT;
     if (total == -1) {
       return;
     }
@@ -60,7 +61,7 @@ Page({
         isNeedLoading: true,
         loadingText: "正在加载"
       });
-      requestSearchResuleFromNet(curSearchKey, lastStart, 10, function (result) {
+      requestSearchResuleFromNet(curSearchKey, lastStart, SEARCH_COUNT, function (result) {
         
         var oldResultSubjects = that.data.resultSubjects;
         console.log("oldResultSubjects.length: " + oldResultSubjects.length);
@@ -87,7 +88,7 @@ Page({
     //console.log(e.detail.value);
     curSearchKey = e.detail.value;
     if (curSearchKey !== '') {
-      requestSearchResuleFromNet( curSearchKey, 0, 10, function (result) {
+      requestSearchResuleFromNet( curSearchKey, 0, SEARCH_COUNT, function (result) {
         //console.log(result.subjects[0].title);
         console.log(e.detail.value);
         if (curSearchKey === '') {

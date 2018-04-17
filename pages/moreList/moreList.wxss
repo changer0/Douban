@@ -1,1 +1,126 @@
 /* pages/moreList/moreList.wxss */
+
+/*搜索框  */
+
+.search_tab {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  background-color: #42bd55;
+}
+
+.search_tab_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #fff;
+  color: #bbb;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-top: 7px;
+  height: 26px;
+  text-align: center;
+}
+
+/*点击效果  */
+
+.search_tab_text:active {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #c6ebcc;
+  color: #bbb;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-top: 7px;
+  height: 26px;
+  text-align: center;
+}
+
+/*搜索框结束  */
+
+.list_item {
+  /* background: red; */
+  height: 173px;
+  margin-top: 26px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.list_item_left {
+  /* background: yellow; */
+  height: 100%;
+  width: 100px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.list_item_middle {
+  height: 100%;
+  margin-left: 20px;
+  /* background: blue; */
+  width: 100px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.list_item_right {
+  height: 100%;
+  margin-left: 20px;
+  /* background: green; */
+  width: 100px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.list_item_img {
+  width: 100px;
+  height: 134px;
+}
+
+.list_item_text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 2px;
+
+}
+
+
+/*评分根布局  */
+
+.list_item_rating {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*评分 星星  */
+
+.list_item_rating_star {
+  background: url('https://upload-images.jianshu.io/upload_images/3118842-34475ebaba60a197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240') no-repeat;
+  /* background-color: #ff0;  */
+  width: 55px;
+  height: 11px;
+}
+
+/*评分 分数  */
+
+.list_item_rating_text {
+  font-size: 14px;
+  margin-left: 4px;
+  color: #aaa;
+}
