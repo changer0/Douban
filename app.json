@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/moreList/moreList",
     "pages/index/index",
+    "pages/moreList/moreList",
     "pages/search/search",
     "pages/wx_test/index",
     "pages/logs/logs"

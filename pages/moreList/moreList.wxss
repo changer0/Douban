@@ -48,13 +48,13 @@
 /*搜索框结束  */
 
 .list_item {
-  /* background: red; */
-  height: 173px;
+  /* background: red;  */
+  height: 180px;
   margin-top: 26px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .list_item_left {
@@ -63,6 +63,7 @@
   width: 100px;
   flex-direction: column;
   flex-wrap: nowrap;
+   margin-left: 35px;
   justify-content: flex-start;
 }
 
@@ -95,9 +96,9 @@
   font-size: 14px;
   font-weight: bold;
   margin-left: 2px;
-
+  flex-wrap: nowrap;
+  white-space: nowrap; /*文本不换行*/
 }
-
 
 /*评分根布局  */
 
@@ -123,4 +124,34 @@
   font-size: 14px;
   margin-left: 4px;
   color: #aaa;
+}
+
+
+.load_more_loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  height: 30px;
+  border-radius: 0px;
+  background: #fff;
+}
+
+
+::-webkit-scrollbar {
+  /*隐藏滚动条  */
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 清楚button默认样式 */
+button::after{
+  border:none;
+  }
+input{
+  outline:none;
+  border:none;
+  list-style: none;
 }

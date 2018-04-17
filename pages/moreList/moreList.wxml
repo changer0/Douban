@@ -7,34 +7,42 @@
     <view class="search_tab_text">搜索</view>
   </view>
 
-  <view class='list_item'>
-    <view class='list_item_left'>
-      <image class='list_item_img' src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862591842,2864954084&fm=27&gp=0.jpg' />
-      <view class='list_item_text'>狂暴巨兽</view>
-      <view class='list_item_rating'>
+  <view wx:for-items="{{resultList}}" wx:key="unique" class="list_for">
 
-        <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
-        <view class='list_item_rating_text'>9.6</view>
-      </view>
-    </view>
-    <view class='list_item_middle'>
-      <image class='list_item_img' src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862591842,2864954084&fm=27&gp=0.jpg' />
-      <view class='list_item_text'>狂暴巨兽</view>
-      <view class='list_item_rating'>
+    <view class='list_item'>
+      <view class='list_item_left'>
+        <image class='list_item_img' src='{{item[0].images.small}}' />
+        <view class='list_item_text'>{{item[0].title}}</view>
+        <view class='list_item_rating'>
 
-        <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
-        <view class='list_item_rating_text'>9.6</view>
+          <view class='list_item_rating_star' style='background-position: 0 {{item[0].starPosition}}px' />
+          <view class='list_item_rating_text'>{{item[0].rating.average}}</view>
+        </view>
       </view>
-    </view>
-    <view class='list_item_right'>
-      <image class='list_item_img' src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862591842,2864954084&fm=27&gp=0.jpg' />
-      <view class='list_item_text'>狂暴巨兽</view>
-      <view class='list_item_rating'>
+      <block wx:if="{{item[1]}}">
+        <view class='list_item_middle'>
+          <image class='list_item_img' src='{{item[1].images.small}}' />
+          <view class='list_item_text'>{{item[1].title}}</view>
+          <view class='list_item_rating'>
 
-        <view class='list_item_rating_star' style='background-position: 0 {{item.starPosition}}px' />
-        <view class='list_item_rating_text'>9.6</view>
-      </view>
+            <view class='list_item_rating_star' style='background-position: 0 {{item[1].starPosition}}px' />
+            <view class='list_item_rating_text'>{{item[1].rating.average}}</view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{item[2]}}">
+        <view class='list_item_right'>
+          <image class='list_item_img' src='{{item[2].images.small}}' />
+          <view class='list_item_text'>{{item[2].title}}</view>
+          <view class='list_item_rating'>
+
+            <view class='list_item_rating_star' style='background-position: 0 {{item[2].starPosition}}px' />
+            <view class='list_item_rating_text'>{{item[2].rating.average}}6</view>
+          </view>
+        </view>
+      </block>
     </view>
   </view>
 
 </scroll-view>
+<button loading='{{isNeedLoading}}' class='load_more_loading' hidden='{{isHideLoadMore}}'>{{loadingText}}</button>
