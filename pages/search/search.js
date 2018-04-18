@@ -135,7 +135,16 @@ Page({
   //返回
   goBack: function(e) {
     wx.navigateBack();
-  }
+  },
+  goDetail: function (e) {
+    // wx.showToast({
+    //   title: '点击测试'
+    // });
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.id,
+    })
+    console.log(e.currentTarget.id);
+  },
 })
 
 /**

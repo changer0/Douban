@@ -62,6 +62,7 @@
   flex-direction: row;
   justify-content: flex-start;
   height: 67px;
+  width: 100%;
 }
 
 .list_divide {

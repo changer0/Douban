@@ -1,6 +1,6 @@
 <!--pages/detail/detail.wxml-->
 
-<scroll-view class='detail_scroll' hidden ="{{!result}}">
+<scroll-view class='detail_scroll' wx:if='{{!result.msg}}' hidden='{{!result}}'>
   <view class='detail_top'>
     <view class='detail_top_bg' style='background-image:url({{result.images.small}})' />
     <view class='detail_top_bg_alp' />
@@ -9,7 +9,7 @@
     <view class='detail_top_title'>{{result.title}}</view>
     <view class='detail_top_original_title'>{{result.original_title}}</view>
     <view class='detail_top_average'>{{result.rating.average}}</view>
-    <view class='detail_top_star' style='background-position: 0 {{item[0].starPosition}}px' />
+    <view class='detail_top_star' style='background-position: 0 {{result.starPosition}}px' />
     <view class='detail_top_ratings_count'>{{result.ratings_count}}人评价</view>
   </view>
 
@@ -27,3 +27,5 @@
   </view>
 
 </scroll-view>
+
+<view wx:else class='detail_no_data'>抱歉!!! 暂无数据</view>

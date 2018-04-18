@@ -16,7 +16,7 @@
   <view class='search_result'>
     <view wx:for-items="{{resultSubjects}}" wx:key="unique">
       <view class='list_divide' />
-      <view class='search_result_item' wx:if="{{index < resultSubjects.length-1}}">
+      <view class='search_result_item' wx:if="{{index < resultSubjects.length-1}}"  bindtap='goDetail' id='{{item.id}}'>
         <image src='{{item.images.small}}' class='search_result_item_img' />
         <view class='search_result_item_right'>
           <view class='search_result_item_right_title'>{{item.title}}</view>

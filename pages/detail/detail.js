@@ -30,6 +30,15 @@ Page({
   onShow: function () {
     var that = this;
     requestData(this, function(result) {
+      try {
+        //设置星星位置
+        var average = result.rating.average;
+        var roundAverage = Math.round(average);
+        //加个值, 将算好的starPosition放到数据源中 就是显示星星的位置
+        result.starPosition = (10 - roundAverage) * (-11);
+      } catch(e) {
+        console.log(e);
+      }
       that.setData({
         result: result
       });
@@ -89,7 +98,7 @@ function requestData(page, callBack) {
       "Content-Type": "json" // 默认值
     },
     success: function (res) {
-      console.log("从网络获取的数据: " + res.data.title);
+      console.log("从网络获取的数据: " + res.data);
       callBack(res.data);
     },
     complete: function (res) {
