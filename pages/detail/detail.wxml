@@ -7,7 +7,7 @@
     <!--这个地方以后再改!  -->
     <image class='detail_top_img' src='{{result.images.small}}' />
     <view class='detail_top_title'>{{result.title}}</view>
-    <view class='detail_top_original_title'>{{result.original_title}}</view>
+    <view class='detail_top_original_title' hidden='{{result.title === result.original_title}}'>{{result.original_title}}</view>
     <view class='detail_top_average'>{{result.rating.average}}</view>
     <view class='detail_top_star' style='background-position: 0 {{result.starPosition}}px' />
     <view class='detail_top_ratings_count'>{{result.ratings_count}}人评价</view>
