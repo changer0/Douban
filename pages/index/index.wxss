@@ -28,7 +28,9 @@
   height: 26px;
   text-align: center;
 }
+
 /*点击效果  */
+
 .search_tab_text:active {
   display: flex;
   flex-direction: row;
@@ -45,7 +47,6 @@
   height: 26px;
   text-align: center;
 }
-
 
 /*列表顶部  */
 
@@ -117,6 +118,9 @@
   margin-top: 8px;
   font-size: 14px;
   font-weight: bold;
+  white-space: nowrap; /*文本不换行*/
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /*评分根布局  */

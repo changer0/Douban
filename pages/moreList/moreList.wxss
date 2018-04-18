@@ -1,5 +1,8 @@
 /* pages/moreList/moreList.wxss */
 
+/*loading样式  */
+@import "../../widget/loading.wxss";
+
 /*搜索框  */
 
 .search_tab {
@@ -54,7 +57,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .list_item_left {
@@ -63,13 +66,13 @@
   width: 100px;
   flex-direction: column;
   flex-wrap: nowrap;
-   margin-left: 35px;
+   margin-left: 20px;
   justify-content: flex-start;
 }
 
 .list_item_middle {
   height: 100%;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   /* background: blue; */
   width: 100px;
   flex-direction: column;
@@ -79,7 +82,7 @@
 
 .list_item_right {
   height: 100%;
-  margin-left: 20px;
+  margin-right: 20px;
   /* background: green; */
   width: 100px;
   flex-direction: column;
@@ -98,6 +101,8 @@
   margin-left: 2px;
   flex-wrap: nowrap;
   white-space: nowrap; /*文本不换行*/
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /*评分根布局  */

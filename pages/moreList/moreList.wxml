@@ -1,4 +1,9 @@
 <!--pages/moreList/moreList.wxml-->
+<import src="../../widget/loading.wxml" />
+
+<view hidden='{{isHiddenLoading}}'><template is="loading" /></view>
+
+
 
 <scroll-view>
 
@@ -45,4 +50,4 @@
   </view>
 
 </scroll-view>
-<button loading='{{isNeedLoading}}' class='load_more_loading' hidden='{{isHideLoadMore}}'>{{loadingText}}</button>
+<button loading='{{isNeedLoadingMore}}' class='load_more_loading' hidden='{{isHideLoadMore}}'>{{loadingText}}</button>

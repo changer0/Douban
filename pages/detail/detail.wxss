@@ -1,0 +1,36 @@
+/* pages/detail/detail.wxss */
+
+/*  */
+
+.detail_top_container {
+  height: 200px;
+  position: relative;
+  overflow: visible;
+}
+
+.detail_top_bg {
+  height: 172px;
+  background-image: url("https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.webp");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-color: rgba(0, 0, 0, 1);
+  /* background-size: 280px 172px; */
+  overflow: hidden;
+}
+
+.detail_top_bg_alp {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 172px;
+}
+
+.detail_top_img {
+  width: 96px;
+  height: 135px;
+  position: absolute;
+  top: 65px;
+  left: 14px;
+}

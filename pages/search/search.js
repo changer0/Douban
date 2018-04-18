@@ -13,8 +13,8 @@ Page({
   data: {
     resultSubjects: [],
     isHideLoadMore: true,
-    isNeedLoading: true,
-    loadingText: "正在加载"
+    isNeedLoading: false,
+    loadingText: "上拉加载更多"
   },
 
   /**
@@ -89,8 +89,7 @@ Page({
     curSearchKey = e.detail.value;
     if (curSearchKey !== '') {
       requestSearchResuleFromNet( curSearchKey, 0, SEARCH_COUNT, function (result) {
-        //console.log(result.subjects[0].title);
-        console.log(e.detail.value);
+        //console.log(e.detail.value);
         if (curSearchKey === '') {
           that.setData({
             resultSubjects: [],
@@ -98,12 +97,22 @@ Page({
           });
         } else {
           total = result.total;
-          that.setData({
-            resultSubjects: result.subjects,
-            isHideLoadMore: true,
-            isNeedLoading: true,
-            loadingText: "正在加载"
-          });
+          console.log("total: " + total);
+          if(total <= SEARCH_COUNT) {
+            that.setData({
+              resultSubjects: result.subjects,
+              isHideLoadMore: false,
+              isNeedLoading: false,
+              loadingText: "已显示全部"
+            });
+          } else {
+            that.setData({
+              resultSubjects: result.subjects,
+              isHideLoadMore: true,
+              isNeedLoading: true,
+              loadingText: "正在加载"
+            });
+          }
         }
 
       });

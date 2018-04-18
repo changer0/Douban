@@ -12,8 +12,9 @@ Page({
   data: {
     resultList: [],
     isHideLoadMore: true,
-    isNeedLoading: false,
-    loadingText: "上拉加载更多"
+    isNeedLoadingMore: false,
+    loadingText: "上拉加载更多",
+    isHiddenLoading: false
   },
 
   /**
@@ -32,6 +33,7 @@ Page({
     //请求数据
     requestListData(this, 0, SEARCH_COUNT, function (result) {
       total = result.total;
+      console.log("total: " + total);
       parseData(that, result);
     });
 
@@ -65,24 +67,30 @@ Page({
   onReachBottom: function () {
     var that = this;
     console.log("上拉加载..");
-    if (total == -1) {
+    if (total == -1 || !total) {
+      console.log("total: " + total);
+      this.setData({
+        isHideLoadMore: false,
+        isNeedLoadingMore: false,
+        loadingText: "已显示全部"
+      });
       return;
     }
-
+    lastStart += SEARCH_COUNT;
     if (total < lastStart) {//加载完成搜索数据
       this.setData({
         isHideLoadMore: false,
-        isNeedLoading: false,
+        isNeedLoadingMore: false,
         loadingText: "已显示全部"
       });
     } else {//加载下一页
       this.setData({
         isHideLoadMore: false,
-        isNeedLoading: true,
+        isNeedLoadingMore: true,
         loadingText: "正在加载"
       });
       //请求数据
-      requestListData(this, 0, SEARCH_COUNT, function (result) {
+      requestListData(this, lastStart, SEARCH_COUNT, function (result) {
         var oldResultSubjects = [];
         var index = 0;
         for (var i = 0; i < that.data.resultList.length; i++) {
@@ -170,7 +178,10 @@ function parseData(page, data) {
     // console.log("resultList[0][0]: " + resultList[0][0].title);
   }
   page.setData({
-    resultList: resultList
+    resultList: resultList,
+    isHideLoadMore: false,
+    isNeedLoadingMore: false,
+    loadingText: "已显示全部"
   });
   // console.log("数组结果: " + resultList[0][0].title);
   // console.log("数组结果: ");
