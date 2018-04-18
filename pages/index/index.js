@@ -12,12 +12,14 @@ Page({
     topMovie: []
   },
 
-  clickTest: function (e) {
-    wx.showToast({
-      title: '点击测试'
-    });
-
-
+  goDetail: function (e) {
+    // wx.showToast({
+    //   title: '点击测试'
+    // });
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.id,
+    })
+    console.log(e.currentTarget.id);
   },
 
   /**

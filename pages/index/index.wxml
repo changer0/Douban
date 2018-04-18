@@ -20,8 +20,8 @@
       <view wx:for-items="{{recentMovie}}" wx:key="unique" class="list_for">
 
         <!-- <block wx:if="{{index < 7}}"> -->
-          <view class='list_item'>
-            <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
+          <view class='list_item' bindtap='goDetail' id='{{item.id}}'>
+            <image src='{{item.images.small}}' class='list_item_img'></image>
             <view class='list_item_title'>{{item.title}}</view>
             <view class='list_item_rating'>
 
@@ -54,8 +54,8 @@
       <view wx:for-items="{{newMovie}}" wx:key="unique" class="list_for">
 
         <!-- <block wx:if="{{index < 7}}"> -->
-          <view class='list_item'>
-            <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
+          <view class='list_item' bindtap='goDetail' id='{{item.id}}'>
+            <image src='{{item.images.small}}' class='list_item_img'></image>
             <view class='list_item_title'>{{item.title}}</view>
             <view class='list_item_rating'>
 
@@ -85,8 +85,8 @@
       <view wx:for-items="{{topMovie}}" wx:key="unique" class="list_for">
 
         <!-- <block wx:if="{{index < 7}}"> -->
-          <view class='list_item'>
-            <image src='{{item.images.small}}' class='list_item_img' bindtap='clickTest'></image>
+          <view class='list_item' bindtap='goDetail' id='{{item.id}}'>
+            <image src='{{item.images.small}}' class='list_item_img'></image>
             <view class='list_item_title'>{{item.title}}</view>
             <view class='list_item_rating'>
 
@@ -105,7 +105,7 @@
   <!-- <view class='list_scroll'>
     <view class='list_item'>
       <image src='http://pic.58pic.com/58pic/15/36/00/73b58PICgvY_1024.jpg' class='list_item_img'></image>
-      <view class='list_item_title' bindtap='clickTest'>狂暴巨兽</view>
+      <view class='list_item_title' >狂暴巨兽</view>
       <view class='list_item_rating'>
 
         <view class='list_item_rating_star' style='background-position: 0 {{starPositionY[index]}}'/>

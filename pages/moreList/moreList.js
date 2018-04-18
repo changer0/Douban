@@ -16,6 +16,15 @@ Page({
     loadingText: "上拉加载更多",
     isHiddenLoading: false
   },
+  goDetail: function (e) {
+    // wx.showToast({
+    //   title: '点击测试'
+    // });
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.id,
+    })
+    console.log(e.currentTarget.id);
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -35,6 +44,9 @@ Page({
       total = result.total;
       console.log("total: " + total);
       parseData(that, result);
+      that.setData({
+        isHiddenLoading: true
+      })
     });
 
   },
@@ -95,11 +107,11 @@ Page({
         var index = 0;
         for (var i = 0; i < that.data.resultList.length; i++) {
           for (var j = 0; j < that.data.resultList[i].length; j++) {
-            oldResultSubjects[index] = that.data.resultList[i][j]; 
+            oldResultSubjects[index] = that.data.resultList[i][j];
             index++;
           }
         }
-        
+
         var oldSize = oldResultSubjects.length;
         for (var i = 0; i < result.subjects.length; i++) {
           oldResultSubjects[i + oldSize] = result.subjects[i];
@@ -179,9 +191,7 @@ function parseData(page, data) {
   }
   page.setData({
     resultList: resultList,
-    isHideLoadMore: false,
-    isNeedLoadingMore: false,
-    loadingText: "已显示全部"
+    isHideLoadMore: false
   });
   // console.log("数组结果: " + resultList[0][0].title);
   // console.log("数组结果: ");

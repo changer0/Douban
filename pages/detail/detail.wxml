@@ -1,12 +1,29 @@
 <!--pages/detail/detail.wxml-->
 
-<scroll-view>
-  <view class='detail_top_container'>
-    <view class='detail_top_bg'>
-       
-    </view>
-    <view class='detail_top_bg_alp'></view>
-    <image class='detail_top_img' src='https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.webp'></image> 
+<scroll-view class='detail_scroll' hidden ="{{!result}}">
+  <view class='detail_top'>
+    <view class='detail_top_bg' style='background-image:url({{result.images.small}})' />
+    <view class='detail_top_bg_alp' />
+    <!--这个地方以后再改!  -->
+    <image class='detail_top_img' src='{{result.images.small}}' />
+    <view class='detail_top_title'>{{result.title}}</view>
+    <view class='detail_top_original_title'>{{result.original_title}}</view>
+    <view class='detail_top_average'>{{result.rating.average}}</view>
+    <view class='detail_top_star' style='background-position: 0 {{item[0].starPosition}}px' />
+    <view class='detail_top_ratings_count'>{{result.ratings_count}}人评价</view>
+  </view>
+
+  <!--图片下方部分  -->
+  <view class='detail_top1'>
+    <view class='detail_top11'>{{result.durations[0]}} {{result.genres[0]}}/{{result.genres[1]}}/{{result.genres[2]}}</view>
+    <view class='detail_top11'>{{result.mainland_pubdate}}上映 {{result.countries[0]}}</view>
+    <view class='detail_top11'>{{result.casts[0].name}} / {{result.casts[1].name}} / {{result.casts[2].name}} / {{result.casts[3].name}}</view>
+  </view>
+
+  <!--简介  -->
+  <view class='detail_summary'>
+    <view class='detail_summary_top'>头号玩家的剧情简介</view>
+    <view class='detail_summary_content'>{{result.summary}}</view>
   </view>
 
 </scroll-view>

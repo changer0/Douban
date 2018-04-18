@@ -1,22 +1,30 @@
 /* pages/detail/detail.wxss */
 
-/*  */
-
-.detail_top_container {
-  height: 200px;
-  position: relative;
-  overflow: visible;
+.detail_scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+
+/* 顶部 */
+
+.detail_top {
+  height: 190px;
+    /* background-color: red;   */
+}
+
+/* 背景图 */
 
 .detail_top_bg {
   height: 172px;
-  background-image: url("https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.webp");
   background-repeat: no-repeat;
   background-position: center 0;
   background-color: rgba(0, 0, 0, 1);
   /* background-size: 280px 172px; */
   overflow: hidden;
 }
+
+/*蒙版效果  */
 
 .detail_top_bg_alp {
   position: absolute;
@@ -27,10 +35,101 @@
   height: 172px;
 }
 
+/*左边img  */
+
 .detail_top_img {
   width: 96px;
   height: 135px;
   position: absolute;
-  top: 65px;
+  top: 55px;
   left: 14px;
+}
+
+/*标题  */
+
+.detail_top_title {
+  position: absolute;
+  font-size: 18px;
+  top: 70px;
+  left: 120px;
+  color: white;
+}
+
+/*原标题  */
+
+.detail_top_original_title {
+  position: absolute;
+  font-size: 18px;
+  top: 95px;
+  left: 120px;
+  color: white;
+}
+
+/*评分  */
+
+.detail_top_average {
+  position: absolute;
+  font-size: 30px;
+  top: 130px;
+  left: 120px;
+  color: white;
+}
+
+/*星星  */
+
+.detail_top_star {
+  position: absolute;
+  font-size: 30px;
+  top: 130px;
+  left: 170px;
+  background: url('https://upload-images.jianshu.io/upload_images/3118842-34475ebaba60a197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240') no-repeat;
+  /* background-color: #ff0;  */
+  width: 55px;
+  height: 11px;
+}
+
+/*多少人评价  */
+
+.detail_top_ratings_count {
+  position: absolute;
+  font-size: 12px;
+  top: 150px;
+  left: 170px;
+  color: #9c9c9c;
+}
+
+.detail_top1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 10px;
+  /* background: red; */
+}
+
+.detail_top11 {
+  font-size: 14px;
+  margin-left: 14px;
+  margin-top: 2px;
+}
+
+/*剧情简介  */
+
+.detail_summary {
+  margin-top: 18px;
+}
+
+.detail_summary_top {
+  padding-left: 14px;
+  color: #b3b3b3;
+  font-size: 16px;
+}
+
+.detail_summary_content {
+  padding: 14px;
+  font-size: 14px;
+}
+.detail_video {
+  margin-top: 18px;
+  width: 100%;
 }

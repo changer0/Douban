@@ -14,7 +14,7 @@
 
   <view wx:for-items="{{resultList}}" wx:key="unique" class="list_for">
 
-    <view class='list_item'>
+    <view class='list_item' bindtap='goDetail' id='{{item[0].id}}'>
       <view class='list_item_left'>
         <image class='list_item_img' src='{{item[0].images.small}}' />
         <view class='list_item_text'>{{item[0].title}}</view>
@@ -25,7 +25,7 @@
         </view>
       </view>
       <block wx:if="{{item[1]}}">
-        <view class='list_item_middle'>
+        <view class='list_item_middle'  bindtap='goDetail' id='{{item[1].id}}'>
           <image class='list_item_img' src='{{item[1].images.small}}' />
           <view class='list_item_text'>{{item[1].title}}</view>
           <view class='list_item_rating'>
@@ -36,7 +36,7 @@
         </view>
       </block>
       <block wx:if="{{item[2]}}">
-        <view class='list_item_right'>
+        <view class='list_item_right'  bindtap='goDetail' id='{{item[2].id}}'>
           <image class='list_item_img' src='{{item[2].images.small}}' />
           <view class='list_item_text'>{{item[2].title}}</view>
           <view class='list_item_rating'>
