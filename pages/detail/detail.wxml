@@ -22,7 +22,7 @@
 
   <!--简介  -->
   <view class='detail_summary'>
-    <view class='detail_summary_top'>头号玩家的剧情简介</view>
+    <view class='detail_summary_top'>{{result.title}}的剧情简介</view>
     <view class='detail_summary_content'>{{result.summary}}</view>
   </view>
 
