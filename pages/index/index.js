@@ -133,7 +133,7 @@ function requestAllDataFromNet(page) {
     });
   });
 
-  requestDataFromNet(this, constant.MOVIE_NEW, serverUrl.MOVIE_TOP250_URL + "?count=10", function (data) {
+  requestDataFromNet(this, constant.MOVIE_TOP250, serverUrl.MOVIE_TOP250_URL + "?count=10", function (data) {
     //console.log("TOP250: " + data[0].title);
     page.setData({
       topMovie: data
